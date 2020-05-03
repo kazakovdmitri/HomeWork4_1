@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.text.InputType;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private EditText mInputMoney;
@@ -59,11 +61,41 @@ public class MainActivity extends AppCompatActivity {
         mBankCardChkBx.setOnCheckedChangeListener(checkedChangeListener);
         mMobilePhoneChkBx.setOnCheckedChangeListener(checkedChangeListener);
         mCashAddressChkBx.setOnCheckedChangeListener(checkedChangeListener);
+        mBtnOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mInputMoney.getText().toString().isEmpty()) {
+                    Toast.makeText(MainActivity.this, R.string.empty_money, Toast.LENGTH_SHORT).show();
+                }
+                if (mInputInfo.getText().toString().isEmpty()) {
+                    Toast.makeText(MainActivity.this, R.string.empty_info, Toast.LENGTH_SHORT).show();
+                }
+                if (mBankCardChkBx.isChecked()) {
+                    String summ = mInputMoney.getText().toString();
+                    String info = mInputInfo.getText().toString();
+                    String result = getResources().getString(R.string.result_card, summ, info);
+                    Toast.makeText(MainActivity.this, result, Toast.LENGTH_LONG).show();
+                } else if (mMobilePhoneChkBx.isChecked()) {
+                    String summ = mInputMoney.getText().toString();
+                    String info = mInputInfo.getText().toString();
+                    String result = getResources().getString(R.string.result_phone, summ, info);
+                    Toast.makeText(MainActivity.this, result, Toast.LENGTH_LONG).show();
+                } else if (mCashAddressChkBx.isChecked()) {
+                    String summ = mInputMoney.getText().toString();
+                    String info = mInputInfo.getText().toString();
+                    String result = getResources().getString(R.string.result_address, summ, info);
+                    Toast.makeText(MainActivity.this, result, Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(MainActivity.this, R.string.result_empty, Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
     private void resetCheckBoxes() {
         mBankCardChkBx.setChecked(false);
         mMobilePhoneChkBx.setChecked(false);
         mCashAddressChkBx.setChecked(false);
+        mInputInfo.setText("");
     }
 }

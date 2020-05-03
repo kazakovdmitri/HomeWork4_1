@@ -37,5 +37,5 @@
         android:id="@+id/cashAddressChkBx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/chkb_addres"/>
+        android:text="@string/chkb_address"/>
 </LinearLayout>

@@ -5,5 +5,11 @@
     <string name="btn_ok">OK</string>
     <string name="chkb_card">С банковской карты</string>
     <string name="chkb_phone">С мобильного телефона</string>
-    <string name="chkb_addres">Наличными по адресу</string>
+    <string name="chkb_address">Наличными по адресу</string>
+    <string name="result_card">Сумма %s будет переведена с банковской карты %s</string>
+    <string name="result_phone">Сумма %s будет переведена с мобильного телефона %s</string>
+    <string name="result_address">Сумма %s будет доставлена наличными по адресу %s</string>
+    <string name="result_empty">Укажите способ оплаты!</string>
+    <string name="empty_money">Не указана сумма!</string>
+    <string name="empty_info">Не указана инфрмация о платеже!</string>
 </resources>
