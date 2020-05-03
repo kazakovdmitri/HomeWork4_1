@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HomeWork4_1</string>
+    <string name="enter_money">Ввод денег</string>
+    <string name="info_payment">Информация об оплате</string>
+    <string name="btn_ok">OK</string>
+    <string name="chkb_card">С банковской карты</string>
+    <string name="chkb_phone">С мобильного телефона</string>
+    <string name="chkb_addres">Наличными по адресу</string>
+</resources>
